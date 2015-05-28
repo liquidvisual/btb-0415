@@ -1,0 +1,221 @@
+/*
+    MEDIA.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Media
+//-----------------------------------------------------------------
+
+.media-tile {
+	display: block;
+	background: rgba(0,0,0,0.6);
+	overflow: hidden;
+
+	.text {
+		font-size: rem-calc(15);
+		padding: rem-calc(15 20 0 20);
+		color: white;
+		overflow: hidden;
+
+		@media #{$medium-up} {
+		    min-height: rem-calc(110);
+		    padding: rem-calc(15 20 20 20);
+		}
+
+		@media #{$large-up} {
+		    padding: rem-calc(15 20 0 20);
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: bold;
+			color: white;
+			line-height: 1.2;
+		}
+
+		h1 {
+			font-size: rem-calc(25);
+		}
+
+		h2 {
+			font-size: rem-calc(20);
+		}
+
+		p {
+			font-size: rem-calc(14);
+		}
+	}
+}
+
+.media-tile-grid .media-tile:hover h2,
+.media-tile-grid .media-tile:hover p {
+	@include transition('color');
+	@media #{$large-up} {
+		color: lighten($primary-color, 30%);
+	}
+}
+
+//-----------------------------------------------------------------
+// Play Button
+//-----------------------------------------------------------------
+
+.media-tile .img {
+	position: relative;
+	display: block;
+
+	&:hover:before {
+		background: $primary-color;
+	}
+
+	&:hover:after {
+		color: white;
+	}
+
+	// @media #{$devices-only} {
+	//     &:after {
+	//     	display: none;
+	//     	@include transition('color');
+	//     	content: "\f144";
+	//     	position: absolute;
+	//     	top: calc(50% - 55px);
+	//     	left: 0;
+	//     	font-family: "FontAwesome";
+	//     	height: 100%;
+	//     	width: 100%;
+	//     	text-align: center;
+	//     	color: rgba(255,255,255, 0.7);
+	//     	font-size: rem-calc(70);
+	//     }
+	// }
+
+	// @media #{$large-up} {
+	// // 	&:after {
+	// // 		content: "\f04b";
+	// // 		position: absolute;
+	// // 		top: calc(50% - 28px);
+	// // 		left: 4px;
+	// // 		font-family: "FontAwesome";
+	// // 		height: 100%;
+	// // 		width: 100%;
+	// // 		text-align: center;
+	// // 		color: rgba(255, 255, 255, 0.7);
+	// // 		font-size: rem-calc(35);
+	// // 	}
+
+	// 	&:before {
+	// 		@include transition('background');
+	// 		content: "";
+	// 		position: absolute;
+	// 		top: calc(50% - 70px/2);
+	// 		left: calc(50% - 70px/2);
+	// 		height: 71px;
+	// 		width: 71px;
+	// 		border-radius: 100%;
+
+	// 		background: rgba(0,0,0, 0.7);
+	// 		font-size: rem-calc(60);
+	// 	}
+	// }
+}
+
+// .media-tile img {
+// 	display: block;
+// 	height: rem-calc(134);
+// 	overflow: hidden;
+// }
+
+// img {
+// 	@include transition('all 1000ms');
+
+// 	&:hover {
+// 		-webkit-transform: scale(1.1);
+// 	}
+// }
+
+//-----------------------------------------------------------------
+// Lead Tile
+//-----------------------------------------------------------------
+
+.lead-tile {
+	background: lighten($primary-color, 1%);
+	margin-bottom: rem-calc(40);
+
+	@media #{$large-up} {
+	    margin: 0;
+	}
+
+	.img {
+		@media #{$devices-only} {
+			&:after {
+				top: 100px;
+				display: none;
+			}
+		}
+	}
+
+	h1 {
+		margin-bottom: rem-calc(20);
+	}
+
+	p {
+		border-top: 1px solid #5887B7;
+		border-bottom: 1px solid #5887B7;
+		margin: -1px 0 0 0;
+		padding: rem-calc(15 0);
+	}
+}
+
+//=========================================
+// Media Table Wrapper
+//=========================================
+
+.media-table-wrapper {
+	@media #{$medium-only} {
+	    display: table;
+	    width: 100%;
+
+		.media-col-1,
+		.media-col-2 {
+			display: table-cell;
+			vertical-align: top;
+			width: 50%;
+		}
+
+		.media-col-1 {
+			background: url(../img/content/tile-1.png) no-repeat;
+			background-size: cover;
+			background-position: center center;
+
+			img {
+				display: none;
+			}
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// Media Grid
+//-----------------------------------------------------------------
+
+.media-tile-grid {
+	li {
+		margin: 0;
+
+		// Remove border so table cells can match up
+		@media #{$large-up} {
+		    &:nth-child(6),
+		    &:nth-child(5),
+		    &:nth-child(4) {
+		    	padding-bottom: 0;
+		    }
+		}
+
+		@media #{$small-only} {
+		    width: 100%;
+		}
+	}
+}

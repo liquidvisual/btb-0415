@@ -1,0 +1,52 @@
+/*
+    FOOTER.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Footer
+//-----------------------------------------------------------------
+
+// Accomplish the extended footer effect
+body {
+	background: $primary-color;
+}
+
+.page-footer {
+	padding: rem-calc(30 0);
+	color: white;
+
+	p, a {
+		color: white;
+		font-weight: bold;
+		font-size: rem-calc(18);
+		line-height: 1;
+	}
+
+	a {
+		@media #{$small-only} {
+		    border: 2px solid white;
+		    display: block;
+		    padding: rem-calc(10);
+		    border-radius: rem-calc(5);
+		}
+	}
+
+	i {
+		@media #{$medium-up} {
+		    position: relative;
+		    top: 10px;
+		    font-size: rem-calc(30);
+		    line-height: 0;
+		    vertical-align: top;
+		}
+	}
+}
+
+//=========================================
+//
+//=========================================

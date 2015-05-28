@@ -1,0 +1,30 @@
+{% comment %}
+    IGNORE THIS COMMENT: Interchange code reference for dev self:
+    <img width="200" data-interchange="[/ImageGen.ashx?width=200&image=@logo.Url, (default)], [@logo.Url, (retina)]" alt="@logo.Name">
+{% endcomment %}
+
+{% assign settings = site.data.settings %}
+{% assign logo = "/img/content/logo.png" %}
+
+<div class="row outer-row">
+    <div class="medium-5 columns text-center medium-text-left">
+
+        <!-- Logo -->
+        <a class="logo" href="/" title="{{ settings.seo_title }}" itemprop="url">
+            <img src="{{ logo }}" alt="{{ settings.company_title }}" itemprop="logo">
+        </a>
+
+        {% comment %}
+        <!-- Hamburger -->
+        <div class="header-mobile-menu hide-for-xlarge-up">
+            <a href="#"> <span class="hamburger"><span class="hamburger-icon"></span></span></a>
+        </div>
+        {% endcomment %}
+
+    </div>
+    <div class="medium-7 columns text-center medium-text-right">
+        <blockquote>
+            <p>"Beyond The Break make every aspect of our start-ups a success. They get it right from spud to completion. one service provider I don't have to worry about. BTB are the 'go to' guys"</p>
+        </blockquote>
+    </div>
+</div>

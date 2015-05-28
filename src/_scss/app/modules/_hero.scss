@@ -1,0 +1,51 @@
+/*
+    HERO.CSS
+
+    - Last updated: 24.04.15
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Hero
+//-----------------------------------------------------------------
+
+.hero {
+	padding: rem-calc(40 0);
+	background: url(../img/template/bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	@media #{$medium-up} {
+	    padding: rem-calc(70 0);
+	}
+
+	.hero-table-wrapper {
+		@media #{$large-up} {
+		    display: table;
+		    width: 100%;
+		    overflow: hidden;
+		}
+	}
+
+	@media #{$large-up} {
+		.hero-col-1,
+		.hero-col-2 {
+			display: table-cell;
+			vertical-align: top;
+		}
+
+		.hero-col-1 {
+			width: rem-calc(312);
+			background: lighten($primary-color, 1%);
+		}
+		.hero-col-2 {
+			padding-left: 20px;
+		}
+	}
+}
+
+//=========================================
+//
+//=========================================

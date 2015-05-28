@@ -1,0 +1,66 @@
+---
+layout: master
+---
+
+{% assign settings = site.data.settings %}
+{% assign promo_tiles = site.data.promo_tiles %}
+
+<!-- HERO -->
+<div class="hero">
+    <div class="row outer-row">
+        <div class="columns">
+
+			<!-- Media Tiles -->
+			<div class="hero-table-wrapper">
+				<div class="hero-col-1">
+
+					<!-- Media Tile Lead -->
+					<div class="media-tile lead-tile">
+
+						<div class="media-table-wrapper">
+							<div class="media-col-1">
+								<a class="wistia-popover[height=619,playerColor=7b796a,width=1100]" href="http://fast.wistia.net/embed/iframe/njuia4yibf?popover=true">
+									<span class="img"><img width="100%" src="/img/content/tile-1.png"></span>
+								</a>
+							</div>
+							<div class="media-col-2">
+								<div class="text">
+									<h1>The Campaign<br> Start-Up Specialists</h1>
+									<p>
+										Global Experience<br>
+										Drilling Knowledge<br>
+										Proven Reliance
+									</p>
+									<p>
+										On Time<br>
+										On Schedule<br>
+										On Expectation
+									</p>
+								</div> <!-- .text -->
+							</div>
+						</div> <!-- .media-table-wrapper -->
+					</div> <!-- .lead-tile -->
+
+				</div> <!-- .hero-col-1 -->
+				<div class="hero-col-2 js-block-equalizer">
+					<ul class="media-tile-grid medium-block-grid-3 large-block-grid-3">
+						{% for item in promo_tiles %}
+							<li>
+								<a data-match-height class="media-tile wistia-popover[height=619,playerColor=7b796a,width=1100]" href="http://fast.wistia.net/embed/iframe/njuia4yibf?popover=true">
+									<span class="img"><img width="100%" src="/img/content/tile-{{forloop.index | plus: 1}}.png"></span>
+									<div class="text">
+										<h2>{{ item.title }}</h2>
+										{% if item.subtitle %}
+										    <p>{{ item.subtitle }}</p>
+										{% endif %}
+									</div>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div> <!-- .hero-col-2 -->
+			</div> <!-- .hero-table-wrapper -->
+
+        </div>
+    </div>
+</div> <!-- .hero -->
