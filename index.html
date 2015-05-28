@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+    <title>Homepage (Index)</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=1280">
 
     <!-- Load JQuery in head -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11,15 +12,16 @@
     <style>
         html, body {
             height: 100%; /* necessary */
-            background: aqua;
+            background: aqua; /* for demo purposes */
         }
 
         body {
-            overflow-y: hidden; /* to prevent double scrollbars */
+            margin: 0;
+            padding: 0;
         }
 
         .landing-iframe {
-            position: fixed;
+            position: absolute; /* NEW */
             top: 0;
             left: 0;
             bottom: 0;
@@ -31,6 +33,7 @@
         /* Prevent flicker before iFrame by hiding entirely*/
         .homepage-wrapper {
             display: none;
+            overflow: hidden; /* NEW */
         }
     </style>
 
@@ -38,7 +41,7 @@
         function closeIframe(event){
             $('#landing-iframe').fadeOut(300, function(){ $(this).remove(); } );
             $('.homepage-wrapper').show(); // resume visibility
-            $('html').css({ "overflow-y": "auto" });
+            // $('html').css({ "overflow-y": "auto" }); // ** REMOVED **
         }
     </script>
 </head>
