@@ -1,6 +1,6 @@
 ---
 layout: iframe
-title: Index Page
+title: Index Page (Landing Overlay)
 permalink: /
 ---
 
